@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+      <title>Car Crowdsourcing - Team Omni (Beta)</title>
+
+        <meta charset="utf-8">
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+
+        <%= stylesheet_link_tag 'style', :media => 'all' %>
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <!--[if IE]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+      <header>
+      <div id="banner">
+        **This is the banner - to be filled**
+        <%= link_to "Login", :controller => 'admin', :action => 'login' %>
+        <%= link_to "Sign up", :controller => 'admin', :action => 'signup' %>
+        <% if session[:user_id] %>
+           <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
+           <!-- add javascript to disable login link -->          
+          
+        <% end %>
+      </div>
+
+      </header>
+
+      <section id="main">
+      <% if flash[:notice] %>
+       <div id="notice">
+         <%= flash[:notice] %>
+       </div>
+      <% end %>
+
+      <%= yield :layout %>
+      </section>
+
+      <footer>
+      </footer>
+    </body>
+</html>

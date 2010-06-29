@@ -1,0 +1,24 @@
+<table class="">
+  <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Url</th>
+  </tr>
+<% for dealers in @dealer %>
+  <tr>
+    <td><%=h dealers.id %></td>
+    <td><%=h dealers.name %></td>
+    <td><%=h dealers.address %></td>
+    <td><%=h dealers.city %></td>
+    <td><%=h dealers.province %></td>
+    <td><%=h dealers.zip %></td>
+    <td><%=h dealers.phone %></td>
+    <td><%=h dealers.url %></td>
+  </tr>
+<% end %>
+</table>
