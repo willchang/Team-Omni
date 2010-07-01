@@ -21,3 +21,23 @@ h1{
   border: 2px solid red;
   padding: 5px;
 }
+
+td{
+  background-color: yellow;
+}
+
+table{
+  margin: auto;
+}
+
+#banner {
+  width: 40%;
+  margin: auto;
+}
+
+div .main_link_wrapper{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+

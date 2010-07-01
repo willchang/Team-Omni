@@ -20,6 +20,7 @@
       <div id="banner">
           
         <h1 id="">Negotiated Car Price Listing</h1>
+        <div class="main_link_wrapper">
         <%= link_to "Login", :controller => 'admin', :action => 'login' %>
         <%= link_to "Sign up", :controller => 'admin', :action => 'signup' %>
         <% if session[:user_id] %>
@@ -27,6 +28,7 @@
            <!-- add javascript to disable login link -->          
           
         <% end %>
+        </div>
       </div>
 
       </header>
