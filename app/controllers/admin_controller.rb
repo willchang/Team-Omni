@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   def index
+    # This is a comment not in WIll's
   end
 
   def login
