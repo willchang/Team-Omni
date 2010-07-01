@@ -2,7 +2,22 @@ div{
   margin: 5px;
 }
 
+/*#banner {
+  background-color: black;
+  margin: 5px;
+  opacity: 0.2;
+}
+  */
+h1{
+  text-align: center;
+  color: green;
+}
 #notice{
   color: red;
 }
 
+#errorExplanation{
+  color: red;
+  border: 2px solid red;
+  padding: 5px;
+}

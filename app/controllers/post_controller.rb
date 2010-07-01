@@ -1,10 +1,11 @@
 class PostController < ApplicationController
 
   def index
-    @posts = Post.find(:all) 
+    @post = Post.find(:all) 
   end
 
   def new
+    @post = Post.new
   end
 
   def show
