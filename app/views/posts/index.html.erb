@@ -1,0 +1,27 @@
+<% form_tag posts_path, :method => 'get' do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<div id="">
+   <table class="">
+     <th>Post ID</th>
+     <th>User ID</th>
+     <th>Car ID</th>
+     <th>Dealer ID</th>
+     <th>Price Paid</th>
+     <th>Description</th>
+     
+    <% @posts.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.user_id %></td>
+        <td><%= p.car_id %></td>
+        <td><%= p.dealer_id %></td>
+        <td><%= p.price_paid %></td>
+        <td><%= p.description %></td>
+      </tr>
+    <% end %>
+   </table>
+</div>
+
