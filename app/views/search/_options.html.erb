@@ -1,0 +1,5 @@
+<select id="car_id" name="car[id]">
+<% for car in @results do -%>
+  <option value="<%= car.id %>"><%= car.name %></option>
+<% end -%>
+</select>

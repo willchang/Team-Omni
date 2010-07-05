@@ -2,11 +2,7 @@ class PostsController < ApplicationController
 
   def index
     # @post = Post.find(:all) 
-    if params[:search]
-      @posts = Post.find(:all, :conditions => ['car_id LIKE ?', "%#{params[:search]}"])
-    else
-      @posts = Post.find(:all)
-    end
+    @posts = Post.search(params[:search])
   end
 
   def new
