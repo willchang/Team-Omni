@@ -10,9 +10,9 @@
     <% @post.each do |p| %>
       <tr>
         <td><%= p.id %></td>
-        <td><%= p.user_id %></td>
-        <td><%= p.car_id %></td>
-        <td><%= p.dealer_id %></td>
+        <td><%= p.user.username %></td>
+        <td><%= p.car.name %></td>
+        <td><%= p.dealer.name %></td>
         <td><%= p.price_paid %></td>
         <td><%= p.description %></td>
       </tr>
