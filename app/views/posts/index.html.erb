@@ -1,3 +1,8 @@
+<% form_tag posts_path, :method => 'get' do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <div id="">
    <table class="">
      <th>Post ID</th>
@@ -7,7 +12,7 @@
      <th>Price Paid</th>
      <th>Description</th>
      
-    <% @post.each do |p| %>
+    <% @posts.each do |p| %>
       <tr>
         <td><%= p.id %></td>
         <td><%= p.user.username %></td>

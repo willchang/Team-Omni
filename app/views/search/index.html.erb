@@ -1,3 +1,38 @@
+<%= javascript_include_tag "prototype" %>
+
 <p>
   We are in search page
 </p>
+
+<p>Testing search by text:</p>
+<% form_tag posts_path, :method => 'get' do %>
+	<%= text_field_tag :search %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<p>Testing search by drop down menus:</p>
+
+<!-- <% form_tag posts_path, :method => 'get' do %>
+	<%= collection_select(:make, :name, @makes, :name, :name, {:prompt => 'Select a make'}) %>
+<% end %> -->
+
+<% form_tag posts_path, :method => 'get' do %>
+
+	<select id="car[make_id]" name="car[make_id]">
+		<option value="">Select a make</option>
+		<%= options_from_collection_for_select(@makes, "id", "name") %>
+	</select>
+
+	<span id="car_id_list">
+		<select id="car_id" name="car[id]"></select>
+	</span>
+	
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<%= observe_field("car[make_id]", 
+  :frequency => 0.25,
+  :update => "car_id_list",
+  :url => {:action => :get_cars},
+  :with => "'make_id='+value")
+%>
