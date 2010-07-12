@@ -101,11 +101,15 @@ form{
   margin:auto;
 }
 */
-#main_container{
-
+#main_container a{
+  font: 14px arial;
+  text-decoration: none;
+  padding: 4px;
+  -moz-border-radius:5px 5px 5px 5px;
+  border: solid 1px #ccc;
 }
 
-input{
+input[type=submit]{
   height: 41px;
   border: 5px solid #660000;
   -moz-border-radius:5px 5px 5px 5px;
@@ -114,13 +118,15 @@ input{
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
-input#search{
+input[type=text],input[type=password]{
   color: black;
   height: 30px;
   width: 300px;
   background-color: #eee;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
+  font: 18px GraublauWeb;
+  vertical-align: middle;
 }
 select{
   height: 40px;

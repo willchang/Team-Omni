@@ -3,10 +3,9 @@
 </div>
 
 <% if session[:user_id] %>
- <%= link_to "New Post", :controller => 'post', :action => 'new' %>
+ <%= link_to "New Post", :controller => 'posts', :action => 'new' %>
  
 <% end %>
 
-<%= debug(@sed) %>
 
 

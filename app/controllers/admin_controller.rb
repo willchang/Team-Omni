@@ -9,7 +9,6 @@ class AdminController < ApplicationController
       if user
         session[:user_id] = user.id
         uri = session[:original_uri]
-        flash[:notice] = "orig url is #{uri}"
         session[:original_uri] = nil
         redirect_to(uri || {:action => 'index'})
       else
