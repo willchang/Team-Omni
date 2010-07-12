@@ -1,5 +1,9 @@
 <div>
+	<% if @posts %>
 	Found <%= @posts.size %> posts.
+	<% else %>
+	Found 0 posts.
+	<% end %>
 </div>
 
 <!-- <% form_tag posts_path, :method => 'get' do %>
