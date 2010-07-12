@@ -4,11 +4,20 @@ class Post < ActiveRecord::Base
   belongs_to :dealer
   belongs_to :car
   
-  def self.search(search)
-      if search
-      find(:all, :conditions => ['car_id LIKE ?', "%#{search}"])
-    else
-      find(:all)
+  def self.search(location, car_id)
+    #   if search
+    #   find(:all, :conditions => ['car_id LIKE ?', "%#{search}"])
+    # else
+    #   find(:all)
+    if location
+      if car_id
+        find(:all, :conditions => ['car_id LIKE ?', "%#{car_id}"])
+      end
     end
+    # if location && car_id
+    #   find(:all, :conditions => ['car_id LIKE ?', "%#{car_id}"])
+    # else
+    #   find(:all)
+    # end
   end
 end

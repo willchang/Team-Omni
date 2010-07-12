@@ -24,7 +24,7 @@ p{
   font: 14px Arial;
 }
 td,tr{
-  padding: 5px;
+  padding: 10px;
   font: 14px Arial;
 }
 
@@ -43,10 +43,14 @@ div{
   opacity: 0.2;
 }
   */
-h1{
+h1, h2{
   text-align: center;
   color: green;
   font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
+}
+
+h2	{
+	font-size: 25px;
 }
 #notice{
   color: red;
