@@ -1,3 +1,38 @@
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+  */
+@font-face { font-family:GraublauWeb; src:url(./GraublauWeb.otf) format("opentype") }
+@font-face { font-family:GraublauWeb; src:url(./GraublauWebBold.otf) format("opentype"); font-weight:bold }
+
+p{
+  font: 14px Arial;
+}
+td,tr{
+  padding: 5px;
+  font: 14px Arial;
+}
+
+th{
+  color: green;
+  font: 16px Arial ;
+}
+
 div{
   margin: 5px;
 }
@@ -11,6 +46,7 @@ div{
 h1{
   text-align: center;
   color: green;
+  font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
 }
 #notice{
   color: red;
@@ -22,12 +58,14 @@ h1{
   padding: 5px;
 }
 
-td{
-  background-color: yellow;
-}
-
-table{
+table.posts{
   margin: auto;
+  background-color: #eee;
+  margin-left: 22%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 5px solid #DFD9C9;
+  -moz-border-radius:5px 5px 5px 5px;
 }
 
 #banner {
@@ -39,5 +77,56 @@ div .main_link_wrapper{
   width: 50%;
   margin: auto;
   text-align: center;
+  font: 14px arial;
+}
+div .main_link_wrapper a{
+  text-decoration: none;
+  padding: 4px;
+  -moz-border-radius:5px 5px 5px 5px;
+  border: solid 1px #ccc;
+}
+section{
+  -moz-border-radius:5px 5px 5px 5px;
+  border:1px solid #DBD9D9;
+  margin:auto;
+  width:200px;
+  text-align:center;
+  
+}
+/*
+form{
+  width:300px;
+  height:150px;
+  border:1px solid #DBD9D9;
+  margin:auto;
+}
+*/
+#main_container{
+
 }
 
+input{
+  height: 41px;
+  border: 5px solid #660000;
+  -moz-border-radius:5px 5px 5px 5px;
+  background-color: #990000;
+  color: white;
+  font: 18px GraublauWeb;
+  vertical-align: middle;
+}
+input#search{
+  color: black;
+  height: 30px;
+  width: 300px;
+  background-color: #eee;
+  border: 5px solid #DFD9C9;
+  -moz-border-radius:5px 5px 5px 5px;
+}
+select{
+  height: 40px;
+  border: 5px solid #DFD9C9;
+  background-color: #eee;
+  -moz-border-radius:5px 5px 5px 5px;
+  font: 18px GraublauWeb;
+  vertical-align: middle;
+}

@@ -34,13 +34,17 @@
       </header>
 
       <section id="main">
-      <% if flash[:notice] %>
-       <div id="notice">
-         <%= flash[:notice] %>
-       </div>
-      <% end %>
+      <div id="main_container">
+      
+        <% if flash[:notice] %>
+         <div id="notice">
+           <%= flash[:notice] %>
+         </div>
+        <% end %>
 
-      <%= yield :layout %>
+        <%= yield :layout %>
+
+      </div>
       </section>
 
       <footer>
