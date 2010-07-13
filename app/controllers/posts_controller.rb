@@ -10,16 +10,19 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @makes = Make.find(:all)
+    # @cars = Car.find(:all)
   end
 
   def show
+    @post = Post.find_by_id(params[:id])
+    @car = Car.find_by_id(@post.car_id)
+    @make = Make.find_by_id(@car.make_id)
+    @dealer = Dealer.find_by_id(@post.dealer_id)
+    @user = User.find_by_id(@post.user_id)
   end
 
   def update
-  end
-  
-  def view
-    
   end
 
 end

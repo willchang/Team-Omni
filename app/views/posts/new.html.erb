@@ -1,15 +1,31 @@
+<%= javascript_include_tag "prototype" %>
+
 <% form_for @post do |f| %>
   <%= f.error_messages %>
   <fieldset>
     <legend>New Post</legend>
-    <div id="">
+    <!-- <div id="">
       <%= f.label :car_id, 'Enter Car Make + Model' %>
       <%= f.text_field :car_id %>
     </div>
     
     <div id="">
       
-    </div>
+    </div> -->
+		<select id="car_make_id" name="car_make_id">
+			<option value="">Select a make</option>
+			<%= options_from_collection_for_select(@makes, "id", "name") %>
+		</select>
+
+		<span id="car_id_list">
+			<select id="car_id" name="car_id"></select>
+		</span>
     
   </fieldset>
 <% end %>
+<%= observe_field("car_make_id", 
+  # :frequency => 0.25,
+  :update => "car_id_list",
+  :url => {:controller => :search, :action => :get_cars},
+  :with => "'make_id='+value")
+%>
