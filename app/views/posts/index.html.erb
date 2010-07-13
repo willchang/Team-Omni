@@ -1,27 +1,37 @@
-<% form_tag posts_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search] %>
+<div>
+	<% if @posts %>
+	Found <%= @posts.size %> posts.
+	<% else %>
+	Found 0 posts.
+	<% end %>
+</div>
+
+<!-- <% form_tag posts_path, :method => 'get' do %>
+	<%= text_field_tag :location, params[:location] %>
 	<%= submit_tag "Search", :name => nil %>
-<% end %>
+<% end %> -->
 
 <div id="">
    <table class="posts">
      <th>Post ID</th>
-     <th>User ID</th>
-     <th>Car ID</th>
-     <th>Dealer ID</th>
+     <th>User</th>
+     <th>Car</th>
+     <th>Dealer</th>
      <th>Price Paid</th>
      <th>Description</th>
      
+	<% if @posts %>
     <% @posts.each do |p| %>
       <tr>
         <td><%= p.id %></td>
         <td><%= p.user.username %></td>
-        <td><%= p.car.name %></td>
-        <td><%= p.dealer.name %></td>
+        <td><%= p.car.year + " " + p.car.make.name + " " + p.car.name %></td>
+        <td><%= p.dealer.name + ", " + p.dealer.address + ", " + p.dealer.province %></td>
         <td><%= p.price_paid %></td>
         <td><%= p.description %></td>
       </tr>
     <% end %>
+	<% end %>
    </table>
 </div>
 

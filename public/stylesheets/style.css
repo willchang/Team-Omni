@@ -24,7 +24,7 @@ p{
   font: 14px Arial;
 }
 td,tr{
-  padding: 5px;
+  padding: 10px;
   font: 14px Arial;
 }
 
@@ -43,10 +43,14 @@ div{
   opacity: 0.2;
 }
   */
-h1{
+h1, h2{
   text-align: center;
   color: green;
   font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
+}
+
+h2	{
+	font-size: 25px;
 }
 #notice{
   color: red;
@@ -59,11 +63,8 @@ h1{
 }
 
 table.posts{
-  margin: auto;
   background-color: #eee;
-  margin-left: 22%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px auto 5px auto;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
 }
@@ -101,6 +102,7 @@ form{
   margin:auto;
 }
 */
+
 #main_container a{
   font: 14px arial;
   text-decoration: none;
