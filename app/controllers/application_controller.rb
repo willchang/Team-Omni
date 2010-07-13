@@ -7,8 +7,15 @@ class ApplicationController < ActionController::Base
   
   layout 'main'
   before_filter :authorize, :except => [:login, :signup]
+  before_filter :check_login
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def check_login
+    if session[:user_id]
+      @username = User.find_by_id(session[:user_id]).username  
+    end    
+  end
 
   protected
 

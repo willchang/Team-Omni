@@ -21,13 +21,13 @@
           
         <h1 id=""><%= link_to "CarCrowdApp", '/' %>: Negotiated Car Price Listing</h1>
         <div class="main_link_wrapper">
+		<% if session[:user_id] %>
+		<%=	"You are logged in as " + @username + "." %>
+		<%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
+		<% else %>
         <%= link_to "Login", :controller => 'admin', :action => 'login' %>
         <%= link_to "Sign up", :controller => 'admin', :action => 'signup' %>
-        <% if session[:user_id] %>
-           <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
-           <!-- add javascript to disable login link -->          
-          
-        <% end %>
+		<% end %>
         </div>
       </div>
 
