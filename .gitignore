@@ -7,8 +7,4 @@ db/*.sqlite3
 *.swp
 *~
 .DS_Store
-<<<<<<< HEAD
 db/*.db
-=======
-db/*.db
->>>>>>> willchang/master
