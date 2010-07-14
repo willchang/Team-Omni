@@ -20,8 +20,55 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 @font-face { font-family:GraublauWeb; src:url(./GraublauWeb.otf) format("opentype") }
 @font-face { font-family:GraublauWeb; src:url(./GraublauWebBold.otf) format("opentype"); font-weight:bold }
 
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	}
+
+#wrap {
+	min-height: 100%;
+/*	border: 1px solid black;*/
+	}
+
+#main_container {
+/*	border: 1px solid black;*/
+	overflow:auto;
+	padding-bottom: 150px;
+	width: 70%;
+	margin: 0 auto 0 auto;
+	}
+
 body {
 	font-family: Arial;
+}
+
+#footer {
+/*	border: 1px solid black;*/
+	background-color: #eee;
+	position: relative;
+	margin: -150px auto; /* negative value of footer height */
+	width: 650px;
+	height: 150px;
+	clear:both;
+}
+
+#footer #left {
+/*	border: 1px solid black;*/
+	float: left;
+	height: 150px;
+	width: 275px;
+	margin-left: 45px;
+	text-align: center;
+}
+
+#footer #right {
+/*	border: 1px solid black;*/
+	float: right;
+	height: 150px;
+	width: 275px;
+	margin-right: 45px;
+	text-align: center;
 }
 
 p {
@@ -37,9 +84,9 @@ th {
   font: 16px Arial ;
 }
 
-div {
+/*div {
   margin: 5px;
-}
+}*/
 
 /*#banner {
   background-color: black;
@@ -91,9 +138,9 @@ div .main_link_wrapper a {
   border: solid 1px #ccc;
 }
 
-section{
+section {
   -moz-border-radius:5px 5px 5px 5px;
-  border:1px solid #DBD9D9;
+/*  border:1px solid #DBD9D9;*/
   margin:auto;
   width:200px;
   text-align:center;
@@ -173,6 +220,7 @@ input[type=text],input[type=password] {
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
+
 select {
   height: 40px;
   border: 5px solid #DFD9C9;
