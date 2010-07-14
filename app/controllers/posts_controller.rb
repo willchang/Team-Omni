@@ -30,5 +30,9 @@ class PostsController < ApplicationController
 
   def update
   end
+  
+  def authorize
+    
+  end
 
 end

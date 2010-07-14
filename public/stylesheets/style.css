@@ -24,6 +24,7 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: Arial;
 	}
 
 #wrap {
@@ -33,15 +34,11 @@ html, body {
 
 #main_container {
 /*	border: 1px solid black;*/
-	overflow:auto;
+	overflow: auto;
 	padding-bottom: 150px;
 	width: 65%;
-	margin: 0 auto 0 auto;
+	margin: 10px auto 0 auto;
 	}
-
-body {
-	font-family: Arial;
-}
 
 #footer {
 /*	border: 1px solid black;*/
@@ -51,6 +48,7 @@ body {
 	width: 650px;
 	height: 150px;
 	clear:both;
+	-moz-border-radius:5px 5px 5px 5px;
 }
 
 #footer #left {
@@ -157,7 +155,7 @@ form{
 
 .omni-form {
 	margin: auto;
-	width: 40%;
+/*	width: 40%;*/
 }
 
 .view_post {
