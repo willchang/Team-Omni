@@ -35,7 +35,7 @@ html, body {
 /*	border: 1px solid black;*/
 	overflow:auto;
 	padding-bottom: 150px;
-	width: 70%;
+	width: 65%;
 	margin: 0 auto 0 auto;
 	}
 
@@ -80,7 +80,7 @@ td, tr {
 }
 
 th {
-  color: green;
+/*  color: green;*/
   font: 16px Arial ;
 }
 
@@ -96,7 +96,7 @@ th {
   */
 h1, h2 {
   text-align: center;
-  color: green;
+/*  color: green;*/
   font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
 }
 
@@ -163,7 +163,7 @@ form{
 .view_post {
 /*	border: 1px solid black;*/
 	text-align: left;
-	width: 60%;
+/*	width: 60%;*/
 	margin: auto;
 }
 
