@@ -17,6 +17,9 @@ class DealerController < ApplicationController
     end
   end
 
+  def map
+    @dealer = Dealer.find(:first)
+  end
 
   protected
 

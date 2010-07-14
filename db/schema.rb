@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100628045044) do
+ActiveRecord::Schema.define(:version => 20100713082031) do
 
   create_table "cars", :force => true do |t|
     t.integer "make_id", :null => false
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20100628045044) do
     t.string "zip",      :limit => 10
     t.string "phone",    :limit => 15
     t.string "url",      :limit => 600
+    t.float  "lat",                     :default => 0.0, :null => false
+    t.float  "lng",                     :default => 0.0, :null => false
   end
 
   create_table "makes", :force => true do |t|
