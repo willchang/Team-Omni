@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:location], params[:car_id])
     @car_searched_for = Car.find_by_id(params[:car_id])
     @make_searched_for = Make.find_by_id(params[:car_make_id])
-
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,9 +14,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
     @makes = Make.find(:all)
-    # @cars = Car.find(:all)
+    @post = Post.new
+  end
+  
+  def create
+    @post = Post.new(params[:post])
+    if @post.save
+      flash[:notice] = 'Post created.'
+      redirect_to :controller => 'posts', :action => 'show', :id => @post.id
+    end
+    
   end
 
   def show
@@ -31,8 +38,13 @@ class PostsController < ApplicationController
   def update
   end
   
-  def authorize
-    
+  # def authorize
+  #   
+  # end
+  
+  def get_cars
+    @results = Car.find_all_by_make_id(params[:make_id])
+    render :partial => 'options'
   end
 
 end
