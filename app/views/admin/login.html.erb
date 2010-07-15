@@ -1,7 +1,9 @@
+<h1>Login</h1>
+
 <div class="omni-form">
   <% form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
+    <!-- <fieldset>
+      <legend>Please Log In</legend> -->
       <p>
         <label for="username">Username:</label>
         <%= text_field_tag :username, params[:username] %>
@@ -13,6 +15,6 @@
       <p>
         <%= submit_tag "Login" %>
       </p>
-    </fieldset>
+    <!-- </fieldset> -->
   <% end %>
 </div>

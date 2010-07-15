@@ -1,25 +1,27 @@
+<h1>Sign Up</h1>
+
 <div class="omni-form">
   <% admin_signup_url = {:controller => 'admin', :action => 'signup'} %>
   <% form_for @user, :url => admin_signup_url do |f| %>
     <%= f.error_messages %>
-    <fieldset>
-      <legend>Enter User Details</legend>
-      <div>
+    <!-- <fieldset>
+      <legend>Enter User Details</legend> -->
+      <p>
         <%= f.label :username %>:
         <%= f.text_field :username, :size => 40  %>
-      </div>
-      <div>
+      </p>
+      <p>
         <%= f.label :user_password, 'Password' %>:
         <%= f.password_field :password, :size => 40 %>
-      </div>
-      <div>
+      </p>
+      <p>
         <%= f.label :user_password_confirmation, 'Confirm' %>:
         <%= f.password_field :password_confirmation, :size => 40 %>
-      </div>
-      <div>
-        <%= f.submit "Add User" , :class => "submit" %>
-      </div>
-    </fieldset>
+      </p>
+      <p>
+        <%= f.submit "Submit" , :class => "submit" %>
+      </p>
+    <!-- </fieldset> -->
   <% end %>
 </div>
 

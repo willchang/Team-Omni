@@ -30,25 +30,38 @@ html, body {
 #wrap {
 	min-height: 100%;
 /*	border: 1px solid black;*/
+	width: 800px;
+	margin: auto;
 	}
 
 #main_container {
 /*	border: 1px solid black;*/
 	overflow: auto;
 	padding-bottom: 150px;
-	width: 60%;
-	margin: 10px auto 0 auto;
+	width: 800px;
+	margin-top: 10px;
+	margin-bottom: 0;
+    text-align: center; 
 	}
+	
+section {
+/*  -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  margin:auto;*/
+/*  width:200px;*/
+/*  text-align:center; */
+}
 
 #footer {
 /*	border: 1px solid black;*/
 	background-color: #eee;
 	position: relative;
 	margin: -150px auto; /* negative value of footer height */
-	width: 650px;
+	width: 800px;
 	height: 150px;
 	clear:both;
 	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
 }
 
 #footer #left {
@@ -116,10 +129,11 @@ table.posts {
   margin: 5px auto 5px auto;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
 }
 
 #banner {
-  width: 40%;
+/*  width: 40%;*/
   margin: auto;
 }
 
@@ -133,17 +147,10 @@ div .main_link_wrapper a {
   text-decoration: none;
   padding: 4px;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   border: solid 1px #ccc;
 }
 
-section {
-  -moz-border-radius:5px 5px 5px 5px;
-/*  border:1px solid #DBD9D9;*/
-  margin:auto;
-  width:200px;
-  text-align:center;
-  
-}
 /*
 form{
   width:300px;
@@ -155,7 +162,7 @@ form{
 
 .omni-form {
 	margin: auto;
-/*	width: 40%;*/
+/*	width: 45%;*/
 }
 
 .view_post {
@@ -196,6 +203,7 @@ form{
   text-decoration: none;
   padding: 4px;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   border: solid 1px #ccc;
 }
 
@@ -203,6 +211,7 @@ input[type=submit] {
   height: 41px;
   border: 5px solid #660000;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   background-color: #990000;
   color: white;
   font: 18px GraublauWeb;
@@ -210,11 +219,11 @@ input[type=submit] {
 }
 input[type=text],input[type=password] {
   color: black;
-/*  height: 30px;*/
   width: 300px;
   background-color: #eee;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
@@ -224,6 +233,7 @@ select {
   border: 5px solid #DFD9C9;
   background-color: #eee;
   -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
