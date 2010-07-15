@@ -20,22 +20,73 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 @font-face { font-family:GraublauWeb; src:url(./GraublauWeb.otf) format("opentype") }
 @font-face { font-family:GraublauWeb; src:url(./GraublauWebBold.otf) format("opentype"); font-weight:bold }
 
-p{
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	}
+
+#wrap {
+	min-height: 100%;
+/*	border: 1px solid black;*/
+	}
+
+#main_container {
+/*	border: 1px solid black;*/
+	overflow:auto;
+	padding-bottom: 150px;
+	width: 65%;
+	margin: 0 auto 0 auto;
+	}
+
+body {
+	font-family: Arial;
+}
+
+#footer {
+/*	border: 1px solid black;*/
+	background-color: #eee;
+	position: relative;
+	margin: -150px auto; /* negative value of footer height */
+	width: 650px;
+	height: 150px;
+	clear:both;
+}
+
+#footer #left {
+/*	border: 1px solid black;*/
+	float: left;
+	height: 150px;
+	width: 275px;
+	margin-left: 45px;
+	text-align: center;
+}
+
+#footer #right {
+/*	border: 1px solid black;*/
+	float: right;
+	height: 150px;
+	width: 275px;
+	margin-right: 45px;
+	text-align: center;
+}
+
+p {
   font: 14px Arial;
 }
-td,tr{
+td, tr {
   padding: 10px;
   font: 14px Arial;
 }
 
-th{
-  color: green;
+th {
+/*  color: green;*/
   font: 16px Arial ;
 }
 
-div{
+/*div {
   margin: 5px;
-}
+}*/
 
 /*#banner {
   background-color: black;
@@ -43,26 +94,26 @@ div{
   opacity: 0.2;
 }
   */
-h1, h2{
+h1, h2 {
   text-align: center;
-  color: green;
+/*  color: green;*/
   font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
 }
 
 h2	{
 	font-size: 25px;
 }
-#notice{
+#notice {
   color: red;
 }
 
-#errorExplanation{
+#errorExplanation {
   color: red;
   border: 2px solid red;
   padding: 5px;
 }
 
-table.posts{
+table.posts {
   background-color: #eee;
   margin: 5px auto 5px auto;
   border: 5px solid #DFD9C9;
@@ -74,21 +125,22 @@ table.posts{
   margin: auto;
 }
 
-div .main_link_wrapper{
-  width: 50%;
+div .main_link_wrapper {
+/*  width: 50%;*/
   margin: auto;
   text-align: center;
   font: 14px arial;
 }
-div .main_link_wrapper a{
+div .main_link_wrapper a {
   text-decoration: none;
   padding: 4px;
   -moz-border-radius:5px 5px 5px 5px;
   border: solid 1px #ccc;
 }
-section{
+
+section {
   -moz-border-radius:5px 5px 5px 5px;
-  border:1px solid #DBD9D9;
+/*  border:1px solid #DBD9D9;*/
   margin:auto;
   width:200px;
   text-align:center;
@@ -103,7 +155,45 @@ form{
 }
 */
 
-#main_container a{
+.omni-form {
+	margin: auto;
+	width: 40%;
+}
+
+.view_post {
+/*	border: 1px solid black;*/
+	text-align: left;
+/*	width: 60%;*/
+	margin: auto;
+}
+
+.view_post .picture {
+	border: 1px solid black;
+	float: right;
+	/* following is temporary for image placeholder*/
+	width: 400px;
+	height: 200px;
+}
+
+.view_post .post_info {
+	font: 25px Arial;
+	font-weight: bold;
+}
+
+.view_post h2.price_paid{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.view_post div.description {
+	text-indent: 30px;
+}
+
+.view_post h1, .view_post h2  {
+	text-align: left;
+}
+
+#main_container a {
   font: 14px arial;
   text-decoration: none;
   padding: 4px;
@@ -111,7 +201,7 @@ form{
   border: solid 1px #ccc;
 }
 
-input[type=submit]{
+input[type=submit] {
   height: 41px;
   border: 5px solid #660000;
   -moz-border-radius:5px 5px 5px 5px;
@@ -120,7 +210,7 @@ input[type=submit]{
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
-input[type=text],input[type=password]{
+input[type=text],input[type=password] {
   color: black;
   height: 30px;
   width: 300px;
@@ -130,7 +220,8 @@ input[type=text],input[type=password]{
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
-select{
+
+select {
   height: 40px;
   border: 5px solid #DFD9C9;
   background-color: #eee;

@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     @makes = Make.find(:all)
-    @cars = Car.find(:all)
+    # @cars = Car.find(:all)
   end
 
   def find

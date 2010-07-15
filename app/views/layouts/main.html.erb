@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-      <title>Car Crowdsourcing - Team Omni (Beta)</title>
+      <title>Car Crowdsourcing - Team Omni (Alpha)</title>
 
         <meta charset="utf-8">
         <meta name="keywords" content=""/>
@@ -16,6 +16,7 @@
     </head>
 
     <body>
+			<div id="wrap">
       <header>
       <div id="banner">
           
@@ -28,6 +29,7 @@
         <%= link_to "Login", :controller => 'admin', :action => 'login' %>
         <%= link_to "Sign up", :controller => 'admin', :action => 'signup' %>
 		<% end %>
+		<%= link_to "Submit a Post", :controller => 'posts', :action => 'new' %>
         </div>
       </div>
 
@@ -47,7 +49,19 @@
       </div>
       </section>
 
-      <footer>
-      </footer>
+      <!-- <footer>
+      </footer> -->
+		</div>
+		<div id="footer"> <!-- Footer outside wrap -->
+			<div id="left">
+				<h4>Footer Column One!</h4>
+				<p>Blah blah blah.</p>
+			</div>
+			<div id="right">
+				<h4>Footer Column Two!</h4>
+				<p>Blah blah blah.</p>
+			</div>
+			</div>
+		</div>
     </body>
 </html>
