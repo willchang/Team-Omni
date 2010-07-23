@@ -1,26 +1,54 @@
-<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "jquery.tokeninput" %>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#car_make_id").change(function(){
+            var id_value_string = $(this).val();
+            if (id_value_string == "") { 
+                // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+                $("select#car_id option").remove();
+                // var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                // $(row).appendTo("select#car_id");
+            }
+            else {
+                // Send the request and update sub category dropdown 
+                $.ajax({
+                    dataType: "json",
+                    cache: false,
+                    url: '/cars/for_makeid/' + id_value_string,
+                    timeout: 2000,
+                    error: function(XMLHttpRequest, errorTextStatus, error){
+                        alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+                    },
+                    success: function(data){                    
+                        // Clear all options from sub category select 
+                        $("select#car_id option").remove();
+                        //put in a empty default line
+                        // var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                        // $(row).appendTo("select#car_id");                        
+                        // Fill sub category select 
+                        $.each(data, function(i, j){
+                            row = "<option value=\"" + j.id + "\">" + j.name + "</option>";   
+                            $(row).appendTo("select#car_id");
+                        });             
+                     }
+                });
+            };
+                });
+    });
+</script>
 
 <% form_tag posts_path, :method => 'get' do %>
 
 	<h2>Where are you?</h2>
 	<%= text_field_tag :location %>
 	
-	<h2>What car are you looking for?</h2>
+	<h2>What car are you looking for?</h2>	
 	<select id="car_make_id" name="car_make_id">
 		<option value="">Select a make</option>
 		<%= options_from_collection_for_select(@makes, "id", "name") %>
 	</select>
-
-	<span id="car_id_list">
-		<select id="car_id" name="car_id"></select>
-	</span>
+	
+	<select id="car_id" name="car_id"></select>
 	
 	<%= submit_tag "Search", :name => nil %>
 <% end %>
-
-<%= observe_field("car_make_id", 
-  # :frequency => 0.25,
-  :update => "car_id_list",
-  :url => {:action => :get_cars},
-  :with => "'make_id='+value")
-%>

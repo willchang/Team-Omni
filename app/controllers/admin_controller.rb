@@ -10,7 +10,8 @@ class AdminController < ApplicationController
         session[:user_id] = user.id
         uri = session[:original_uri]
         session[:original_uri] = nil
-        redirect_to(uri || {:action => 'index'})
+        # redirect_to(uri || {:action => 'index'})
+        redirect_to '/'
       else
         flash.now[:notice] = "Invalid username or password."
       end

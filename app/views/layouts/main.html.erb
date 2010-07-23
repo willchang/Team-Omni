@@ -8,6 +8,7 @@
         <meta name="description" content=""/>
 
         <%= stylesheet_link_tag 'style', :media => 'all' %>
+		<%= javascript_include_tag "jquery-1.4.2.min" %>
 
 
         <!--[if IE]>
@@ -35,7 +36,7 @@
 
       </header>
 
-      <section id="main">
+      <!-- <section id="main"> -->
       <div id="main_container">
       
         <% if flash[:notice] %>
@@ -47,7 +48,7 @@
         <%= yield :layout %>
 
       </div>
-      </section>
+      <!-- </section> -->
 
       <!-- <footer>
       </footer> -->

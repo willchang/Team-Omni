@@ -9,12 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100713082031) do
+ActiveRecord::Schema.define(:version => 20100714234655) do
 
   create_table "cars", :force => true do |t|
     t.integer "make_id", :null => false
     t.string  "name"
-    t.string  "year"
   end
 
   create_table "comments", :force => true do |t|
@@ -40,11 +39,14 @@ ActiveRecord::Schema.define(:version => 20100713082031) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer "user_id",                                    :null => false
-    t.integer "car_id",                                     :null => false
-    t.integer "dealer_id",                                  :null => false
-    t.decimal "price_paid",  :precision => 16, :scale => 2, :null => false
-    t.string  "description"
+    t.integer  "user_id",                                    :null => false
+    t.integer  "car_id",                                     :null => false
+    t.integer  "dealer_id",                                  :null => false
+    t.decimal  "price_paid",  :precision => 16, :scale => 2, :null => false
+    t.string   "description"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "modified_at"
   end
 
   create_table "sessions", :force => true do |t|

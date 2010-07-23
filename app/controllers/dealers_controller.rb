@@ -1,11 +1,11 @@
-class DealerController < ApplicationController
+class DealersController < ApplicationController
   def index
-    @dealer = Dealer.find(:all)
+    @dealers = Dealer.find(:all, :conditions => ['name LIKE ?', "%#{params[:q]}"])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @dealer }
-      format.json  { render :json => @dealer.to_json(:only => [:id, :name]) }
+      format.xml  { render :xml => @dealers }
+      format.json { render :json => @dealers.to_json(:only => [:id, :name]) }
     end
   end
 

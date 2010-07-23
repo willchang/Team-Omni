@@ -1,31 +1,91 @@
-<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "jquery.tokeninput" %>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#post_dealer_id").tokenInput("/dealers.json", {
+          hintText: "Type in the name of a dealership.",
+          noResultsText: "No results",
+          searchingText: "Searching...",
+					tokenLimit: 1
+      });
+  });
+  </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#car_make_id").change(function(){
+            var id_value_string = $(this).val();
+            if (id_value_string == "") { 
+                // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+                $("select#post_car_id option").remove();
+                // var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                // $(row).appendTo("select#post_car_id");
+            }
+            else {
+                // Send the request and update sub category dropdown 
+                $.ajax({
+                    dataType: "json",
+                    cache: false,
+                    url: '/cars/for_makeid/' + id_value_string,
+                    timeout: 2000,
+                    error: function(XMLHttpRequest, errorTextStatus, error){
+                        alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+                    },
+                    success: function(data){                    
+                        // Clear all options from sub category select 
+                        $("select#post_car_id option").remove();
+                        //put in a empty default line
+                        // var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                        // $(row).appendTo("select#post_car_id");                        
+                        // Fill sub category select 
+                        $.each(data, function(i, j){
+                            row = "<option value=\"" + j.id + "\">" + j.name + "</option>";   
+                            $(row).appendTo("select#post_car_id");                     
+                        });             
+                     }
+                });
+            };
+                });
+    });
+</script>
 
-<% form_for @post do |f| %>
+<h1>New Post</h1>
+
+<% form_for @post, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
-  <fieldset>
-    <legend>New Post</legend>
-    <!-- <div id="">
-      <%= f.label :car_id, 'Enter Car Make + Model' %>
-      <%= f.text_field :car_id %>
-    </div>
-    
-    <div id="">
-      
-    </div> -->
+  <!-- <fieldset>
+    <legend>New Post</legend> -->
+
+		<%= hidden_field(:post, :user_id, :value => session[:user_id]) %>
+		
+		<p>
+			<%= f.label :year, 'Year of Car' %>
+			<%= f.text_field :year, :size => 10 %>
+			
 		<select id="car_make_id" name="car_make_id">
 			<option value="">Select a make</option>
 			<%= options_from_collection_for_select(@makes, "id", "name") %>
 		</select>
+		
+	    <%= collection_select(:post, :car_id, Car.find_all_by_make_id(:car_make_id), :id, :name, options ={:prompt => ""}) %>
+	  </p>
+ 
+		<p>
+			<%= f.label :dealer_id %><br />
+			<%= f.text_field :dealer_id %>
+		</p>
+		
+		<p>
+			<%= f.label :price_paid, 'Price Paid' %><br/>
+			<%= f.text_field :price_paid %>
+		</p>
+		
+		<p>
+			<%= f.label :description, 'Description/Comments' %><br/>
+			<%= f.text_field :description, :rows => 5 %>
+		</p>
+		
+		<p>
+			<%= f.submit "Submit Post", :class => "submit" %>
+		</p>
 
-		<span id="car_id_list">
-			<select id="car_id" name="car_id"></select>
-		</span>
-    
-  </fieldset>
+  <!-- </fieldset> -->
 <% end %>
-<%= observe_field("car_make_id", 
-  # :frequency => 0.25,
-  :update => "car_id_list",
-  :url => {:controller => :search, :action => :get_cars},
-  :with => "'make_id='+value")
-%>

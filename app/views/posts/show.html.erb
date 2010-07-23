@@ -1,13 +1,15 @@
+<h1>View Post</h1>
+
 <div class="view_post">
-	<p>Post #<%= @post.id %> by <%= @user.username %>.</p>
+	<p>Post #<%= @post.id %> by <%= @user.username %> on <%= @post.created_at %>.</p>
 	<div class="picture">
 		Image goes here!
 	</div>
 	<h2>
-		Car: <%= @car.year + " " + @make.name + " " + @car.name %>
+		<%= @post.year.to_s + " " + @make.name + " " + @car.name %>
 	</h2>
 	<h2>
-		Dealer: <%= @dealer.name %><br/>
+		<%= @dealer.name %><br/>
 		<%= @dealer.address %>, <%= @dealer.city %><br/>
 		<%= @dealer.province %>, <%= @dealer.zip %>
 	</h2>

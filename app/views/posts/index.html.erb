@@ -1,3 +1,5 @@
+<h1>Search Results</h1>
+
 <div>
 	<p>
 
@@ -24,17 +26,17 @@
      <th>Car</th>
      <th>Dealer</th>
      <th>Price Paid</th>
-     <th>Description</th>
+     <!-- <th>Description</th> -->
      
 	<% if @posts %>
     <% @posts.each do |p| %>
       <tr>
         <td><%= link_to p.id, p %></td>
         <td><%= p.user.username %></td>
-        <td><%= p.car.year + " " + p.car.make.name + " " + p.car.name %></td>
+        <td><%= p.year.to_s + " " + p.car.make.name + " " + p.car.name %></td>
         <td><%= p.dealer.name + ", " + p.dealer.address + ", " + p.dealer.city + " " + p.dealer.province %></td>
-        <td><%= p.price_paid %></td>
-        <td><%= p.description %></td>
+        <td>$<%= p.price_paid %></td>
+        <!-- <td><%= p.description %></td> -->
       </tr>
     <% end %>
 	<% end %>
