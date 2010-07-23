@@ -47,10 +47,6 @@
     });
 </script>
 
-<!-- <%= debug @post %>
-<%= debug params %> -->
-
-
 <h1>New Post</h1>
 
 <% form_for @post, :url => { :action => "create" } do |f| %>
@@ -58,35 +54,17 @@
   <!-- <fieldset>
     <legend>New Post</legend> -->
 
-		<!-- <p>
-			<%= f.label :user_id, 'User_id (temporary)' %><br/>
-			<%= f.text_field :user_id %>			
-		</p> -->
 		<%= hidden_field(:post, :user_id, :value => session[:user_id]) %>
 		
 		<p>
 			<%= f.label :year, 'Year of Car' %>
 			<%= f.text_field :year, :size => 10 %>
 			
-			<!-- <label for="car_make_id">Select a Car:</label> -->
-			<!-- <select id="car_make_id" name="car_make_id">
-				<option value="">Select a make</option>
-				<%= options_from_collection_for_select(@makes, "id", "name") %>
-			</select>
-
-			<span id="car_id_list">
-				<select id="post_car_id" name="post[car_id]"></select>
-			</span>
-		</p> -->
-		
-		<label for="car_make_id">make</label>
 		<select id="car_make_id" name="car_make_id">
 			<option value="">Select a make</option>
 			<%= options_from_collection_for_select(@makes, "id", "name") %>
 		</select>
 		
-		<p>
-	    <%= f.label :car_id %><br />       
 	    <%= collection_select(:post, :car_id, Car.find_all_by_make_id(:car_make_id), :id, :name, options ={:prompt => ""}) %>
 	  </p>
  
@@ -111,9 +89,3 @@
 
   <!-- </fieldset> -->
 <% end %>
-<!-- <%= observe_field("car_make_id", 
-  # :frequency => 0.25,
-  :update => "car_id_list",
-  :url => {:controller => :posts, :action => :get_cars},
-  :with => "'make_id='+value")
-%> -->

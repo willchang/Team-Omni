@@ -42,16 +42,7 @@
 	<h2>Where are you?</h2>
 	<%= text_field_tag :location %>
 	
-	<h2>What car are you looking for?</h2>
-	<!-- <select id="car_make_id" name="car_make_id">
-		<option value="">Select a make</option>
-		<%= options_from_collection_for_select(@makes, "id", "name") %>
-	</select>
-
-	<span id="car_id_list">
-		<select id="car_id" name="car_id"></select>
-	</span> -->
-	
+	<h2>What car are you looking for?</h2>	
 	<select id="car_make_id" name="car_make_id">
 		<option value="">Select a make</option>
 		<%= options_from_collection_for_select(@makes, "id", "name") %>
@@ -61,10 +52,3 @@
 	
 	<%= submit_tag "Search", :name => nil %>
 <% end %>
-
-<!-- <%= observe_field("car_make_id", 
-  # :frequency => 0.25,
-  :update => "car_id_list",
-  :url => {:action => :get_cars},
-  :with => "'make_id='+value")
-%> -->
