@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  
   def index
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   def new
     @makes = Make.find(:all)
     @post = Post.new
+    @dealers = Dealer.find(:all)
   end
   
   def create
@@ -46,5 +47,4 @@ class PostsController < ApplicationController
     @results = Car.find_all_by_make_id(params[:make_id])
     render :partial => 'options'
   end
-
 end

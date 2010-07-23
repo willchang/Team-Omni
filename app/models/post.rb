@@ -11,4 +11,13 @@ class Post < ActiveRecord::Base
       end
     end
   end
+  
+  def dealer_name
+    dealer.name if dealer    
+  end
+  
+  def dealer_name=(name)
+    self.dealer = Dealer.find_by_name(name) unless name.blank?
+    
+  end
 end
