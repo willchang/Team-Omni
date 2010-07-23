@@ -4,13 +4,16 @@ class PostsController < ApplicationController
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
     @posts = Post.search(params[:location], params[:car_id])
-    @car_searched_for = Car.find_by_id(params[:car_id])
-    @make_searched_for = Make.find_by_id(params[:car_make_id])
+    if params[:car_id] && params[:car_make_id]
+      @car_searched_for = Car.find_by_id(params[:car_id])
+      @make_searched_for = Make.find_by_id(params[:car_make_id])
+    end
 
     
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :layout => false }
+      format.json  { render :layout => false }
     end
   end
 

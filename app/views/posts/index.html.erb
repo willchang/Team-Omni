@@ -1,6 +1,9 @@
 <div>
 	<p>
+
+              <% if params[:car_id] && params[:car_make_id] %>
 		You searched for "<%= @make_searched_for.name + " " + @car_searched_for.name %>".
+              <% end %>
 		<% if @posts %>
 		Found <%= @posts.size %> posts.
 		<% else %>

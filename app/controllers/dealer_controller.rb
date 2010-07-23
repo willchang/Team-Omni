@@ -5,6 +5,7 @@ class DealerController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dealer }
+      format.json  { render :json => @dealer.to_json(:only => [:id, :name]) }
     end
   end
 
