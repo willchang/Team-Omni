@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :makes
   map.resources :cars
-  map.resources :dealers
+  #map.resources :dealers
   map.resources :users
   map.resources :posts
   map.resources :comments

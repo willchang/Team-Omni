@@ -5,4 +5,9 @@ William Chang
 Allen Zhang
 Reginald Tan
 
-**feel free to edit this readme
+TBD:
+User want to search dealers nearby him: input =>[location, car he wants to buy]
+1. map out dealers in google maps - each dealer containing several posts
+    - 
+2. click a dealer - show you all the posts related to that dealer
+

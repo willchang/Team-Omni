@@ -30,19 +30,15 @@
 
         function codeAddress() {
           var address = document.getElementById("address").value;
-          if (geocoder) {
-            geocoder.geocode( { 'address': address}, function(results, status) {
-              if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
+                //map.setCenter(results[0].geometry.location);
+                map.setZoom(5);
+                var mylatlng = new google.maps.LatLng(-30.0, 140.0);
+                var latlng = new google.maps.LatLng(-33.397, 150.644);
+
                 var marker = new google.maps.Marker({
                     map: map, 
-                    position: results[0].geometry.location
+                    position: latlng//results[0].geometry.location
                 });
-              } else {
-                alert("Geocode was not successful for the following reason: " + status);
-              }
-            });
-          }
         }
       </script>
     </head>
