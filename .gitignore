@@ -8,3 +8,9 @@ db/*.sqlite3
 *~
 .DS_Store
 db/*.db
+db/ib*
+db/*.err
+db/*.pid
+db/test
+db/omni_dev
+db/mysql
