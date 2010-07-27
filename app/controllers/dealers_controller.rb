@@ -22,6 +22,9 @@ class DealersController < ApplicationController
     @dealer = Dealer.find(:first)
   end
 
+  def temp
+    #do nothing
+  end
   protected
 
   def authorize

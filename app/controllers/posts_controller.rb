@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :layout => false }
+      format.json  { render :layout => false }
     end
   end
 

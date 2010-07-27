@@ -8,6 +8,8 @@
       <th>Zip</th>
       <th>Phone</th>
       <th>Url</th>
+      <th>Latitude</th>
+      <th>Longtitude</th>
   </tr>
 <% for dealers in @dealers %>
   <tr>
@@ -19,6 +21,8 @@
     <td><%=h dealers.zip %></td>
     <td><%=h dealers.phone %></td>
     <td><%=h dealers.url %></td>
+    <td><%=h dealers.lat %></td>
+    <td><%=h dealers.lng %></td>
   </tr>
 <% end %>
 </table>

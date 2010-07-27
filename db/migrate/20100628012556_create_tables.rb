@@ -26,8 +26,8 @@ class CreateTables < ActiveRecord::Migration
       t.integer :user_id, :null => false, :options => "CONSTRAINT fk_comments_users REFERENCES users(id)"
       t.integer :post_id, :null => false, :options => "CONSTRAINT fk_comments_posts REFERENCES posts(id)"
       t.string :body
-      
     end
+
   end
 
   def self.down

@@ -12,7 +12,8 @@
         <!--[if IE]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        
       <script>
       var geocoder;
         var map;
@@ -29,39 +30,26 @@
 
         function codeAddress() {
           var address = document.getElementById("address").value;
-          if (geocoder) {
-            geocoder.geocode( { 'address': address}, function(results, status) {
-              if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
+                //map.setCenter(results[0].geometry.location);
+                map.setZoom(5);
+                var mylatlng = new google.maps.LatLng(-30.0, 140.0);
+                var latlng = new google.maps.LatLng(-33.397, 150.644);
+
                 var marker = new google.maps.Marker({
                     map: map, 
-                    position: results[0].geometry.location
+                    position: latlng//results[0].geometry.location
                 });
-              } else {
-                alert("Geocode was not successful for the following reason: " + status);
-              }
-            });
-          }
         }
+
       </script>
     </head>
 
     <body onload="initialize()">
-      <header>
-      </header>
-
-      <section id="main">
-        <p>
-          it reginald speaking
-        </p>
-        <div>
-          <input id="address" type="textbox" value="Sydney, NSW">
-          <input type="button" value="Encode" onclick="codeAddress()">
-        </div>
-         <div id="map_canvas" style="width: 320px; height: 480px;"></div>
-      </section>
-
-      <footer>
-      </footer>
+     <div id="map_canvas"></div>
+      <div>
+        <input id="address" type="textbox" value="Sydney, NSW">
+        <input type="button" value="Encode" onclick="codeAddress()">
+        
+      </div>
     </body>
 </html>

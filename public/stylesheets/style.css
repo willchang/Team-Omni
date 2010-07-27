@@ -20,12 +20,25 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 @font-face { font-family:GraublauWeb; src:url(./GraublauWeb.otf) format("opentype") }
 @font-face { font-family:GraublauWeb; src:url(./GraublauWebBold.otf) format("opentype"); font-weight:bold }
 
-html, body {
+html, body{
+
 	height: 100%;
+        width: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
 	}
+#map_canvas{
+  height: 300px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #eee;
+  border: 5px solid #DFD9C9;
+  -moz-border-radius:5px 5px 5px 5px;
+}
 
 #wrap {
 	min-height: 100%;
@@ -99,7 +112,8 @@ p {
   font: 14px Arial;
 }
 td, tr {
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
   font: 14px Arial;
 }
 
@@ -112,12 +126,6 @@ th {
   margin: 5px;
 }*/
 
-/*#banner {
-  background-color: black;
-  margin: 5px;
-  opacity: 0.2;
-}
-  */
 h1, h2 {
   text-align: center;
 /*  color: green;*/
