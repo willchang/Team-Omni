@@ -50,6 +50,20 @@
       <div>
         <input id="address" type="textbox" value="Sydney, NSW">
         <input type="button" value="Encode" onclick="codeAddress()">
+        
       </div>
+      <div id="dealer_result">
+        <% for dealer in @nearby_dealers %>
+          <p>
+            <%= dealer.id %>
+            <%= dealer.name %>
+            <%= dealer.address %>
+            <%= dealer.city %>
+            <%= dealer.province %>
+            <%= dealer.zip %>
+          </p>
+        <% end %>
+      </div>
+      
     </body>
 </html>

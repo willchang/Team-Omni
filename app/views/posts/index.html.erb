@@ -1,4 +1,22 @@
-<h1>Search Results</h1>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+  var geocoder;
+  var map;
+$(document).ready( function(){
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var myOptions = {
+    zoom: 8,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  document.ready
+
+});
+//]]>
+</script>
+<h1 onclick="initialize()">Search Results</h1>
 
 <div>
 	<p>
@@ -18,6 +36,11 @@
 	<%= submit_tag "Search", :name => nil %>
 <% end %> -->
 
+     <div id="map_canvas"></div>
+      <div>
+        <input id="address" type="textbox" value="Sydney, NSW">
+        <input type="button" value="Encode" onclick="codeAddress()">
+      </div>
 <div id="">
 	<table class="posts">
 		<th>Post ID</th>

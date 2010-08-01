@@ -22,3 +22,19 @@ function updatepage() {
     document.getElementById('change').innerHTML = result.childNodes[0].nodeValue;
   };
 }
+
+        
+function codeAddress() {
+  var address = document.getElementById("address").value;
+        //map.setCenter(results[0].geometry.location);
+        map.setZoom(5);
+        var mylatlng = new google.maps.LatLng(-30.0, 140.0);
+        //var latlng = new google.maps.LatLng(-33.397, 150.644);
+
+        var latlng = new google.maps.LatLng(40.6019274, -79.7571664);
+        var marker = new google.maps.Marker({
+            map: map, 
+            position: latlng//results[0].geometry.location
+        });
+}
+
