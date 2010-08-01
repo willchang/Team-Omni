@@ -4,22 +4,14 @@ class Post < ActiveRecord::Base
   belongs_to :dealer
   belongs_to :car
   
+  validates_presence_of :year
+  
   def self.search(location, car_id)
     if location
       if car_id
-        find(:all, :conditions => {:car_id => car_id})
-      else
-        find(:all)
+        find(:all, :conditions => {:car_id => car_id}, :order => "created_at DESC")
       end
     end
   end
   
-  def dealer_name
-    dealer.name if dealer    
-  end
-  
-  def dealer_name=(name)
-    self.dealer = Dealer.find_by_name(name) unless name.blank?
-    
-  end
 end

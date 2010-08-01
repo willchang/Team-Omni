@@ -2,10 +2,9 @@
 
 <div>
 	<p>
-
-              <% if params[:car_id] && params[:car_make_id] %>
-		You searched for "<%= @make_searched_for.name + " " + @car_searched_for.name %>".
-              <% end %>
+		<% if @make_searched_for && @car_searched_for %>
+ 		You searched for "<%= @make_searched_for.name + " " + @car_searched_for.name %>".
+		<% end %>
 		<% if @posts %>
 		Found <%= @posts.size %> posts.
 		<% else %>
@@ -20,12 +19,13 @@
 <% end %> -->
 
 <div id="">
-   <table class="posts">
-     <th>Post ID</th>
-     <th>User</th>
-     <th>Car</th>
-     <th>Dealer</th>
-     <th>Price Paid</th>
+	<table class="posts">
+		<th>Post ID</th>
+		<th>User</th>
+		<th>Car</th>
+		<th>Dealer</th>
+		<th>Price Paid</th>
+		<th>Date Posted</th>		
      <!-- <th>Description</th> -->
 
 	<% if @posts %>
@@ -36,10 +36,9 @@
         <td><%= p.year.to_s + " " + p.car.make.name + " " + p.car.name %></td>
         <td><%= p.dealer.name + ", " + p.dealer.address + ", " + p.dealer.city + " " + p.dealer.province %></td>
         <td>$<%= p.price_paid %></td>
-        <!-- <td><%= p.description %></td> -->
+				<td><%= p.created_at %></td>
       </tr>
     <% end %>
 	<% end %>
    </table>
 </div>
-

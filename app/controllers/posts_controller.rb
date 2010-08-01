@@ -3,10 +3,12 @@ class PostsController < ApplicationController
   def index
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
-    @posts = Post.search(params[:location], params[:car_id])
-    if params[:car_id] && params[:car_make_id]
+    if params[:location] && params[:car_id]
+      @posts = Post.search(params[:location], params[:car_id])
       @car_searched_for = Car.find_by_id(params[:car_id])
       @make_searched_for = Make.find_by_id(params[:car_make_id])
+    else
+      @posts = Post.find(:all, :order => "created_at DESC")      
     end
     
     respond_to do |format|
@@ -45,9 +47,4 @@ class PostsController < ApplicationController
   # def authorize
   #   
   # end
-
-  def get_cars
-    @results = Car.find_all_by_make_id(params[:make_id])
-    render :partial => 'options'
-  end
 end
