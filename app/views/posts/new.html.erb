@@ -58,6 +58,8 @@
 		
 		<p>
 			
+			<%= f.text_field :year, {:value => 'Year of Car', :size => 10} %>
+			
 		<select id="car_make_id" name="car_make_id">
 			<option value="">Select a make</option>
 			<%= options_from_collection_for_select(@makes, "id", "name") %>

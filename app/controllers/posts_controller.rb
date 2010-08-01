@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authorize, :except => [:index]
   
   def index
     # @post = Post.find(:all) 
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   def update
   end
   
-  # def authorize
-  #   
-  # end
+  def authorize
+    
+  end
 end

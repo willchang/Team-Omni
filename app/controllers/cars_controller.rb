@@ -21,3 +21,8 @@ class CarsController < ApplicationController
     end
   end
 end
+  
+  def authorize
+    
+  end
+end

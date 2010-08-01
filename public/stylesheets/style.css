@@ -50,7 +50,7 @@ html, body{
 #main_container {
 /*	border: 1px solid black;*/
 	overflow: auto;
-	padding-bottom: 150px;
+	padding: 10px 10px 150px 10px;
 	width: 800px;
 /*	margin-top: 10px;*/
 	margin-bottom: 0;
