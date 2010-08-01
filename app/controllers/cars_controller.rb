@@ -5,4 +5,8 @@ class CarsController < ApplicationController
       format.json  { render :json => @cars }
     end
   end
+  
+  def authorize
+    
+  end
 end
