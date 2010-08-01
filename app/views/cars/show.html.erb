@@ -1,0 +1,16 @@
+<h1 id="">View Cars</h1>
+<table>
+  <tr>
+    <th>car id</th>
+    <th>make </th>
+    <th>car name</th>
+  </tr>
+
+  <tr>
+    <% if @car %>
+      <td><%= @car.id %></td>
+      <td><%= @car.make.name %></td>
+      <td><%= @car.name %></td>
+    <% end %>
+  </tr>
+</table>

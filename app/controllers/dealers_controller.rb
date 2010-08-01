@@ -19,11 +19,16 @@ class DealersController < ApplicationController
   end
 
   def map
-    @dealer = Dealer.find(:first)
+    dealer = Dealer.find(:first)
+    @nearby_dealers = Dealer.find_nearby_dealers(dealer.lat,dealer.lng,0.1)
   end
 
   def temp
     #do nothing
+    if params[:temp_name]
+      flash[:notice] = "Yey"
+      @temp = "It worked. Params can be accessed"
+    end
   end
   protected
 

@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
     if location
       if car_id
         find(:all, :conditions => {:car_id => car_id})
+      else
+        find(:all)
       end
     end
   end

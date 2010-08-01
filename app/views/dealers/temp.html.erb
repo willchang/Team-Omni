@@ -1,3 +1,12 @@
 <p>
-  Hellow rold temporary site
+  <% form_tag(:url => '/dealers/temp', :address => '12 ross') do %>
+      <%= text_field_tag 'car', nil, :onchange => 'callServer()' %>
+      <%= submit_tag "Save changes" %>
+    <% end %>
+  
 </p>
+<div id="change" style="border: 1px solid;">
+   
+</div>
+
+<%= debug params %>

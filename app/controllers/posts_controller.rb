@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   # def authorize
   #   
   # end
-  
+
   def get_cars
     @results = Car.find_all_by_make_id(params[:make_id])
     render :partial => 'options'
