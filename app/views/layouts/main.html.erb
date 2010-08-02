@@ -16,9 +16,9 @@
         <![endif]-->
     </head>
 
-    <body >
-			<div id="wrap">
-      <header>
+    <body>
+		<div id="wrap">
+      <!-- <header> -->
       <div id="banner">
           
         <h1 id=""><%= link_to "CarCrowdApp", '/' %>: Negotiated Car Price Listing</h1>
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      </header>
+      <!-- </header> -->
 
       <!-- <section id="main"> -->
       <div id="main_container">
@@ -53,16 +53,13 @@
       <!-- <footer>
       </footer> -->
 		</div>
-		<div id="footer"> <!-- Footer outside wrap -->
-			<div id="left">
-				<h4>Footer Column One!</h4>
-				<p>Blah blah blah.</p>
+			<div id="footer"> <!-- Footer outside wrap -->
+				<div id="footer_left">
+					<ul>
+						<li><%= link_to 'About', '#' %></li>
+						<li><%= link_to 'FAQ', '#' %></li>
+					</ul>					
+				</div>
 			</div>
-			<div id="right">
-				<h4>Footer Column Two!</h4>
-				<p>Blah blah blah.</p>
-			</div>
-			</div>
-		</div>
     </body>
 </html>
