@@ -104,12 +104,47 @@ section {
 	text-align: center;
 }
 
+#homepage_search {
+/*	border: 1px solid black;*/
+	width: 415px;
+	margin: auto;
+	padding: 80px 0 0 0;
+/*	text-align: left;*/
+}
+
+#homepage_search .example {
+	color: #888;
+	font-size: 12px;
+}
+
+#homepage_search input[type=text] {
+	font-size: 150%;
+	width: 400px;
+	height: 50px;
+/*	margin: auto;*/
+}
+
+#homepage_search input[type=submit] {
+	float: right;
+}
+
+#homepage_search select {
+	width: 200px;
+	height: 50px;
+	font-size: 130%;
+	margin: auto;
+}
+
 #notice {
 	padding: 5px;
 }
 
 p {
   font: 14px Arial;
+}
+
+p.search_results_info {
+	font-size: 120%;
 }
 td, tr {
   margin: 5px;

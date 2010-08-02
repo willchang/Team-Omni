@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
-  before_filter :authorize, :except => [:index]
+  before_filter :authorize, :except => [:index, :show]
   
   def index
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
-    if params[:location] && params[:car_id]
+    if params[:location] != "" && params[:car_id]
       @posts = Post.search(params[:location], params[:car_id])
       @car_searched_for = Car.find_by_id(params[:car_id])
       @make_searched_for = Make.find_by_id(params[:car_make_id])
+      @location_searched_for = params[:location]
     else
       @posts = Post.find(:all, :order => "created_at DESC")      
     end
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
   def update
   end
   
-  def authorize
-    
-  end
+  # def authorize
+  #   
+  # end
 end

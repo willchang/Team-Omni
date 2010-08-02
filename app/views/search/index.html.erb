@@ -37,18 +37,21 @@
     });
 </script>
 
+<div id="homepage_search">
 <% form_tag posts_path, :method => 'get' do %>
 
 	<h2>Where are you?</h2>
+	<span class="example">e.g. 123 Fake St., Toronto, Ontario</span>
 	<%= text_field_tag :location %>
 	
-	<h2>What car are you looking for?</h2>	
+	<h2>What car are you looking for?</h2>
 	<select id="car_make_id" name="car_make_id">
 		<option value="">Select a make</option>
 		<%= options_from_collection_for_select(@makes, "id", "name") %>
 	</select>
 	
 	<select id="car_id" name="car_id"></select>
-	
-	<%= submit_tag "Search", :name => nil %>
+	<br/><br/>
+	<%= submit_tag "Search!", :name => nil %>
 <% end %>
+</div>

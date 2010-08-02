@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
+  # before_filter :authorize, :except => [:for_makeid]
   def for_makeid
-    @cars = Car.find( :all, :conditions => [" make_id = ?", params[:id]]  ).sort_by{ |k| k['name'] }
+    # @cars = Car.find( :all, :conditions => [" make_id = ?", params[:id]]  ).sort_by{ |k| k['name'] }
+    @cars = Car.find_all_by_make_id(params[:id])
     respond_to do |format|
       format.json  { render :json => @cars }
     end
@@ -20,7 +22,6 @@ class CarsController < ApplicationController
       format.xml  { render :xml => @car }
     end
   end
-end
   
   def authorize
     

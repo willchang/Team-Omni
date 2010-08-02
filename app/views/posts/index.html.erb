@@ -19,14 +19,19 @@ $(document).ready( function(){
 <h1 onclick="initialize()">Search Results</h1>
 
 <div>
-	<p>
+	<p class="search_results_info">
 		<% if @make_searched_for && @car_searched_for %>
- 		You searched for "<%= @make_searched_for.name + " " + @car_searched_for.name %>".
+	 		You searched for <b>"<%= @make_searched_for.name + " " + @car_searched_for.name %>"</b> near <b><%= @location_searched_for %></b>.
 		<% end %>
 		<% if @posts %>
-		Found <%= @posts.size %> posts.
+			Found <%= @posts.size %> 
+			<% if @posts.size > 1 %>
+				posts.
+			<% else %>
+				post.
+			<% end %>
 		<% else %>
-		Found 0 posts.
+			Found 0 posts.
 		<% end %>
 	</p>
 </div>
