@@ -34,17 +34,30 @@
                 });
             };
                 });
+
+				// default value for location box, clear on focus, returns when loses focus				
+				$("input#location").val("123 Fake St., Toronto, Ontario").css('color', '#ccc');
+
+				$("input#location").focus(function() {
+					$(this).val("");
+					$(this).css('color', '#000');
+				}).blur(function() {
+					if ($(this).val() == "") {
+						$(this).val("123 Fake St., Toronto, Ontario");
+						$(this).css('color', '#ccc');						
+					};
+				});
     });
 </script>
 <!-- <div id="inset"></div> -->
 <div id="homepage_search">
 <% form_tag posts_path, :method => 'get' do %>
 
-	<h2>Where are you?</h2>
-	<span class="example">e.g. 123 Fake St., Toronto, Ontario</span>
+	<h1>Enter your location.</h1>
+	<!-- <span class="example">e.g. 123 Fake St., Toronto, Ontario</span> -->
 	<%= text_field_tag :location %>
 	
-	<h2>What car are you looking for?</h2>
+	<h1>What car are you looking for?</h1>
 	<select id="car_make_id" name="car_make_id">
 		<option value="">Select a make</option>
 		<%= options_from_collection_for_select(@makes, "id", "name") %>

@@ -126,12 +126,12 @@ section {
 #homepage_search input[type=text] {
 	font-size: 150%;
 	width: 400px;
-	height: 50px;
+	height: 40px;
 /*	margin: auto;*/
 }
 
 #homepage_search input[type=submit] {
-	float: right;
+/*	float: right;*/
 }
 
 #homepage_search select {
