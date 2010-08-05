@@ -32,7 +32,6 @@ function initialize(){
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  alert(latlng);
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
   //put location marker
   var marker = new google.maps.Marker({
