@@ -1,5 +1,4 @@
-/*
-html, body, div, span, applet, object, iframe,
+/*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
@@ -16,19 +15,19 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
-  */
+*/  
 @font-face { font-family:GraublauWeb; src:url(./GraublauWeb.otf) format("opentype") }
 @font-face { font-family:GraublauWeb; src:url(./GraublauWebBold.otf) format("opentype"); font-weight:bold }
 
-html, body{
-
+html, body {
 	height: 100%;
-        width: 100%;
+    width: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
 	}
-#map_canvas{
+
+#map_canvas {
   height: 400px;
   width: 600px;
   margin-left: auto;
@@ -44,16 +43,15 @@ html, body{
 	min-height: 100%;
 /*	border: 1px solid black;*/
 	width: 800px;
-	margin: 0px auto 0px auto;
+	margin: 0 auto;
 	}
 
 #main_container {
 /*	border: 1px solid black;*/
 	overflow: auto;
-	padding: 10px 10px 150px 10px;
+	padding: 30px 0 75px 0;
 	width: 800px;
-/*	margin-top: 10px;*/
-	margin-bottom: 0;
+	margin: 0;
     text-align: center; 
 	}
 	
@@ -74,34 +72,73 @@ section {
 
 #footer {
 /*	border: 1px solid black;*/
-	background-color: #eee;
+/*	background-color: #eee;*/
 	position: relative;
-	margin: -150px auto; /* negative value of footer height */
-	width: 800px;
-	height: 150px;
-	clear:both;
-	-moz-border-radius-topleft: 5px;
+	margin: -40px auto; /* negative value of footer height */
+	padding: 10px 20px 0 20px;
+	width: 760px;
+	height: 30px;
+	clear: both;
+	font-size: 12px;
+	color: #777;
+	text-align: center;
+/*	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-topright: 5px;
 	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;*/
 }
 
-#footer #left {
-/*	border: 1px solid black;*/
-	float: left;
-	height: 150px;
-	width: 275px;
-	margin-left: 45px;
-	text-align: center;
+#footer a {
+	color: #777;
+	text-decoration: underline;
 }
 
-#footer #right {
+#footer_left ul {
+	margin: 0;
+	padding: 0;
+}
+
+#footer_left ul li {
+	display: inline;
+	list-style-type: none;
+	padding: 0 5px 0 5px;
+}
+
+/*#inset {
+	height: 80px;
+}*/
+
+#homepage_search {
 /*	border: 1px solid black;*/
-	float: right;
-	height: 150px;
-	width: 275px;
-	margin-right: 45px;
-	text-align: center;
+	width: 415px;
+	margin: auto;
+	padding: 50px 0 0 0;
+/*	text-align: left;*/
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}                 
+
+#homepage_search .example {
+	color: #888;
+	font-size: 12px;
+}
+
+#homepage_search input[type=text] {
+	font-size: 150%;
+	width: 400px;
+	height: 40px;
+/*	margin: auto;*/
+}
+
+#homepage_search input[type=submit] {
+/*	float: right;*/
+}
+
+#homepage_search select {
+	width: 200px;
+	height: 50px;
+	font-size: 130%;
+	margin: auto;
 }
 
 #notice {
@@ -110,6 +147,10 @@ section {
 
 p {
   font: 14px Arial;
+}
+
+p.search_results_info {
+	font-size: 120%;
 }
 td, tr {
   margin: 5px;
@@ -126,15 +167,21 @@ th {
   margin: 5px;
 }*/
 
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 20px;
+}
+
 h1, h2 {
   text-align: center;
 /*  color: green;*/
-  font:30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
+  font: 30px GraublauWeb, Georgia, Times, 'Times New Roman', serif; 
 }
 
 h2	{
 	font-size: 25px;
 }
+
 #notice {
   color: red;
 }
@@ -147,7 +194,7 @@ h2	{
 
 table {
   background-color: #eee;
-  margin: 0px auto 5px auto;
+  margin: 0px auto 0px auto;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
@@ -244,47 +291,6 @@ select {
   font: 18px GraublauWeb;
   vertical-align: middle;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Autocomplete */
 ul.token-input-list {
