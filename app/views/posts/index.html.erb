@@ -1,22 +1,16 @@
 <script type="text/javascript" language="javascript" charset="utf-8">
 //<![CDATA[
-  var geocoder;
-  var map;
-$(document).ready( function(){
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
-  var myOptions = {
-    zoom: 8,
-    center: latlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-  map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  document.ready
+  $(document).ready( function(){
+      // initialize the map
+    initialize();
+    callServer();
+    
+    }
+  );
 
-});
 //]]>
 </script>
-<h1 onclick="initialize()">Search Results</h1>
+<h1>Search Results</h1>
 
 <div>
 	<p>
@@ -48,6 +42,7 @@ $(document).ready( function(){
 		<th>Car</th>
 		<th>Dealer</th>
 		<th>Price Paid</th>
+		<th>Description</th>		
 		<th>Date Posted</th>		
      <!-- <th>Description</th> -->
 
@@ -59,7 +54,9 @@ $(document).ready( function(){
         <td><%= p.year.to_s + " " + p.car.make.name + " " + p.car.name %></td>
         <td><%= p.dealer.name + ", " + p.dealer.address + ", " + p.dealer.city + " " + p.dealer.province %></td>
         <td>$<%= p.price_paid %></td>
+        <td><%= p.description %></td>
 				<td><%= p.created_at %></td>
+
       </tr>
     <% end %>
 	<% end %>

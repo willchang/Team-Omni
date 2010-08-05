@@ -5,13 +5,14 @@ class PostsController < ApplicationController
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
     if params[:location] && params[:car_id]
-      @posts = Post.search(params[:location], params[:car_id])
+      @posts = Post.search(params[:location], params[:car_id],1000)
       @car_searched_for = Car.find_by_id(params[:car_id])
       @make_searched_for = Make.find_by_id(params[:car_make_id])
     else
       @posts = Post.find(:all, :order => "created_at DESC")      
     end
-    
+      @lat, @lng = get_lat_lng(params[:location] || '3049 mississauga road, missisauga, on')
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :layout => false }

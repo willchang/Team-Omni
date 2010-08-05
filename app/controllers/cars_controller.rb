@@ -20,7 +20,6 @@ class CarsController < ApplicationController
       format.xml  { render :xml => @car }
     end
   end
-end
   
   def authorize
     

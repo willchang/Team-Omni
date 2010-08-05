@@ -4,7 +4,7 @@ xml.markers do
   for p in @posts
     xml.marker :name => p.dealer.name,
                 :address => p.dealer.address,
-                :lat => 25,
-                :lng => 14
+                :lat => p.dealer.lat,
+                :lng => p.dealer.lng
   end
 end

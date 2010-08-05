@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
     end    
   end
 
+  def get_lat_lng(location)
+    #geo = Geokit::Geocoders::YahooGeocoder.geocode("#{address}, #{city}, #{province}")
+    geo = Geokit::Geocoders::GoogleGeocoder.geocode(location)
+    return geo.lat,geo.lng
+  end
+
   protected
 
   def authorize

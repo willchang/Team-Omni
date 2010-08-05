@@ -13,6 +13,7 @@ db/*.err
 db/*.pid
 db/test
 db/omni_dev
+db/omni_test*
 db/mysql
 config/database.yml
 config/data_mysql.yml

@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
   validates_confirmation_of :password
 
+  def self.get_users_with_email
+    find(:all, :conditions => {:email => 'haha'})
+  end
   def password
     @password
   end
@@ -50,5 +53,5 @@ class User < ActiveRecord::Base
   def create_new_salt
     self.salt = self.object_id.to_s + rand.to_s
   end
-  
+
 end
