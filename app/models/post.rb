@@ -12,9 +12,12 @@ class Post < ActiveRecord::Base
     myLng = result.lng
     # if location
     #   if car_id
-      find_by_sql("SELECT *, ( 3959 * acos( cos( radians(#{myLat}) ) * cos( radians( dealers.lat ) ) * cos( radians( dealers.lng ) - radians(#{myLng}) ) + sin( radians(#{myLat}) ) * sin( radians( dealers.lat ) ) ) ) AS distance FROM posts join dealers on dealers.id = posts.dealer_id WHERE posts.car_id = #{car_id} HAVING distance < #{radius} ORDER BY distance,created_at DESC;")
+      find_by_sql("SELECT posts.id, posts.user_id, posts.car_id, posts.dealer_id, posts.price_paid, posts.description, posts.year, posts.created_at, posts.modified_at, dealers.name, dealers.address, dealers.city, dealers.province, dealers.zip, dealers.phone, dealers.url, dealers.lat, dealers.lng, ( 3959 * acos( cos( radians(#{myLat}) ) * cos( radians( dealers.lat ) ) * cos( radians( dealers.lng ) - radians(#{myLng}) ) + sin( radians(#{myLat}) ) * sin( radians( dealers.lat ) ) ) ) AS distance FROM posts join dealers on dealers.id = posts.dealer_id WHERE posts.car_id = #{car_id} HAVING distance < #{radius} ORDER BY distance,created_at DESC;")
     #   end
     # end
   end
   
 end
+
+
+# posts.id, posts.user_id, posts.car_id, posts.dealer_id, posts.price_paid, posts.description, posts.year, posts.created_at, posts.modified_at, dealers.id, dealers.name, dealers.address, dealers.city, dealers.province, dealers.zip, dealers.phone, dealers.url, dealers.lat, dealers.lng

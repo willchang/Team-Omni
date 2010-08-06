@@ -44,6 +44,18 @@
                 });
             };
                 });
+
+					$('input#post_year').val('Enter in the car year').css('color', '#bbb');
+					
+					$('input#post_year').focus(function() {
+						$(this).val('');
+						$(this).css('color', '#000');
+					}).blur(function() {
+						if ($(this).val() == '') {
+							$(this).val('Enter in the car year');
+							$(this).css('color', '#bbb');
+						};
+					});
     });
 </script>
 
@@ -58,7 +70,7 @@
 		
 		<p>
 			
-			<%= f.text_field :year, {:value => 'Year of Car', :size => 10} %>
+			<%= f.text_field :year, {:size => 10} %>
 			
 		<select id="car_make_id" name="car_make_id">
 			<option value="">Select a make</option>

@@ -36,7 +36,7 @@
                 });
 
 				// default value for location box, clear on focus, returns when loses focus				
-				$("input#location").val("123 Fake St., Toronto, Ontario").css('color', '#ccc');
+				$("input#location").val("123 Fake St., Toronto, Ontario").css('color', '#bbb');
 
 				$("input#location").focus(function() {
 					$(this).val("");
@@ -44,7 +44,7 @@
 				}).blur(function() {
 					if ($(this).val() == "") {
 						$(this).val("123 Fake St., Toronto, Ontario");
-						$(this).css('color', '#ccc');						
+						$(this).css('color', '#bbb');						
 					};
 				});
     });
