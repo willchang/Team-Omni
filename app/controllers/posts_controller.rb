@@ -4,10 +4,17 @@ class PostsController < ApplicationController
   def index
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
+    @makes = Make.find(:all)
     if params[:location] && params[:car_id]
-      @posts = Post.search(params[:location], params[:car_id],1000)
+      if params[:radius]
+        @posts = Post.search(params[:location], params[:car_id], params[:radius])
+      else
+        @posts = Post.search(params[:location], params[:car_id])
+      end
       @car_searched_for = Car.find_by_id(params[:car_id])
       @make_searched_for = Make.find_by_id(params[:car_make_id])
+      @cars_searched_by_make_id = Car.find_all_by_make_id(params[:car_make_id])
+      
       @location_searched_for = params[:location]
     else
       @posts = Post.find(:all, :order => "created_at DESC")      
