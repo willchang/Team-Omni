@@ -52,7 +52,7 @@ html, body {
 	padding: 30px 0 75px 0;
 	width: 800px;
 	margin: 0;
-    text-align: center; 
+    text-align: center;
 	}
 	
 section {
@@ -113,7 +113,7 @@ section {
 	width: 415px;
 	margin: auto;
 	padding: 50px 0 0 0;
-/*	text-align: left;*/
+	text-align: center;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }                 
@@ -124,9 +124,9 @@ section {
 }
 
 #homepage_search input[type=text] {
-	font-size: 150%;
+	font-size: 140%;
 	width: 400px;
-	height: 40px;
+/*	height: 40px;*/
 /*	margin: auto;*/
 }
 
@@ -136,8 +136,8 @@ section {
 
 #homepage_search select {
 	width: 200px;
-	height: 50px;
-	font-size: 130%;
+/*	height: 50px;*/
+	font-size: 120%;
 	margin: auto;
 }
 
@@ -273,13 +273,13 @@ input[type=submit] {
 }
 input[type=text],input[type=password] {
   color: black;
-  width: 300px;
+  /*width: 300px;*/
   background-color: #eee;
   border: 5px solid #DFD9C9;
   -moz-border-radius:5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
   font: 18px GraublauWeb;
-  vertical-align: middle;
+/*  vertical-align: middle;*/
 }
 
 select {
@@ -306,16 +306,13 @@ ul.token-input-list {
     margin: 0;
     padding: 0;
 /*    background-color: #fff;*/
-
-
 	color: black;
-	/*  width: 300px;*/
 	background-color: #eee;
 	border: 5px solid #DFD9C9;
 	-moz-border-radius:5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	font: 18px GraublauWeb;
-	vertical-align: middle;
+/*	vertical-align: middle;*/
 }
 
 ul.token-input-list li {
@@ -325,8 +322,8 @@ ul.token-input-list li {
 ul.token-input-list li input {
     border: 0;
     width: 350px;
-    padding: 3px 8px;
-    background-color: white;
+/*    padding: 3px 8px;*/
+    background-color: #eee;
 }
 
 li.token-input-token {
@@ -334,7 +331,7 @@ li.token-input-token {
     height: auto !important; 
     height: 1%;
     margin: 3px;
-    padding: 3px 5px;
+/*    padding: 3px 5px;*/
     background-color: #d0efa0;
     color: #000;
     font-weight: bold;
@@ -419,4 +416,12 @@ div.token-input-dropdown ul li em {
 
 div.token-input-dropdown ul li.token-input-selected-dropdown-item {
     background-color: #d0efa0;
+}
+
+/* Form */
+
+div.form {
+	width: 400px;
+	margin: auto;*/
+/*	text-align: left;*/
 }

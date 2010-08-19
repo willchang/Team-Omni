@@ -45,14 +45,14 @@
             };
                 });
 
-					$('input#post_year').val('Enter in the car year').css('color', '#bbb');
+					$('input#post_year').val('Car year').css('color', '#bbb');
 					
 					$('input#post_year').focus(function() {
 						$(this).val('');
 						$(this).css('color', '#000');
 					}).blur(function() {
 						if ($(this).val() == '') {
-							$(this).val('Enter in the car year');
+							$(this).val('Car year');
 							$(this).css('color', '#bbb');
 						};
 					});
@@ -61,6 +61,7 @@
 
 <h1>New Post</h1>
 
+<div class="form">
 <% form_for @post, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
   <!-- <fieldset>
@@ -69,9 +70,8 @@
 		<%= hidden_field(:post, :user_id, :value => session[:user_id]) %>
 		
 		<p>
-			
-			<%= f.text_field :year, {:size => 10} %>
-			
+		<%= f.label :year, 'Car'%>	<br/>
+		<%= f.text_field :year, {:size => 5} %>
 		<select id="car_make_id" name="car_make_id">
 			<option value="">Select a make</option>
 			<%= options_from_collection_for_select(@makes, "id", "name") %>
@@ -82,7 +82,7 @@
  
 		<p>
 			<%= f.label :dealer_id %><br />
-			<%= f.text_field :dealer_id %>
+			<input type="hidden" id="post_dealer_id" name="post[dealer_id]" size="30" type="text" /> 
 		</p>
 		
 		<p>
@@ -92,12 +92,12 @@
 		
 		<p>
 			<%= f.label :description, 'Description/Comments' %><br/>
-			<%= f.text_field :description, :rows => 5 %>
+			<%= f.text_field :description, :rows => 20 %>
 		</p>
-		
 		<p>
 			<%= f.submit "Submit Post", :class => "submit" %>
 		</p>
 
   <!-- </fieldset> -->
 <% end %>
+</div>
