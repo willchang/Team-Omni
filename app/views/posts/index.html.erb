@@ -49,6 +49,8 @@
 </script>
 <h1>Search Results</h1>
 
+<% if !@car_searched_for.nil? %>
+
 <div>
 	<% form_tag posts_path, :method => 'get' do %>
 
@@ -96,18 +98,18 @@
         <input id="address" type="textbox" value="Sydney, NSW">
         <input type="button" value="Encode" onclick="codeAddress()">
       </div>
-<div id="">
-	<table class="posts">
-		<th>Post ID</th>
-		<th>User</th>
-		<th>Car</th>
-		<th>Dealer</th>
-		<th>Price Paid</th>
-		<th>Description</th>		
-		<th>Date Posted</th>		
-     <!-- <th>Description</th> -->
 
-	<% if @posts %>
+	<% if !@posts.empty? %>
+	<div id="">
+		<table class="posts">
+			<th>Post ID</th>
+			<th>User</th>
+			<th>Car</th>
+			<th>Dealer</th>
+			<th>Price Paid</th>
+			<th>Description</th>		
+			<th>Date Posted</th>		
+	     <!-- <th>Description</th> -->
     <% @posts.each do |p| %>
       <tr>
         <td><%= link_to p.id, p %></td>
@@ -123,3 +125,7 @@
 	<% end %>
    </table>
 </div>
+
+<% else %>
+<h1>You did not select a car :(</h1>
+<% end %>

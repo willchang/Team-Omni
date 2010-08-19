@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     # @post = Post.find(:all) 
     # @posts = Post.search(params[:search])
     @makes = Make.find(:all)
-    if params[:location] && params[:car_id] && params[:car_make_id]
+    if params[:location] && !params[:car_make_id].empty?
       if params[:radius]
         @posts = Post.search(params[:location], params[:car_id], params[:radius])
       else
