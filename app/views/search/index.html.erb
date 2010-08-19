@@ -63,6 +63,8 @@
 		<%= options_from_collection_for_select(@makes, "id", "name") %>
 	</select>
 	
+	<input type="hidden" id="radius" name="radius" value="50" />
+	
 	<select id="car_id" name="car_id"></select>
 	<br/><br/>
 	<%= submit_tag "Search!", :name => nil %>

@@ -61,12 +61,11 @@
 		<select id="car_id" name="car_id">
 			<%= options_from_collection_for_select(@cars_searched_by_make_id, :id, :name, @car_searched_for.id) %>
 		</select>
-
+		
 		<select id="radius" name="radius">
-			<option value="50">50</option>
-			<option value="100">100</option>
-			<option value="200">200</option>
+			<%= options_for_select([["50", "50"], ["100", "100"], ["150", "150"], ["200", "200"]], params[:radius]) %>
 		</select>
+		
 		<%= submit_tag "Search!", :name => nil %>
 	<% end %>
 	
